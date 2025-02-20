@@ -1,0 +1,102 @@
+.agenda-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.agenda-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.agenda-header h1 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.fecha-selector {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.fecha-selector input[type="date"] {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.agenda-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.cita-card {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.hora {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.paciente-info h3 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+.paciente-info p {
+    margin: 0.5rem 0;
+    color: #666;
+}
+
+.acciones {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.no-citas {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    color: #666;
+}
+
+.alert {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+} 

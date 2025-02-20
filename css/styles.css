@@ -1,0 +1,554 @@
+/* Variables CSS para colores y valores comunes */
+:root {
+    --color-primary: #1a237e;
+    --color-secondary: #64b5f6;
+    --color-accent: #ffd700;
+    --color-text: #333;
+    --color-text-light: #fff;
+    --color-background: #f5f5f5;
+    --shadow-default: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --border-radius: 15px;
+    --transition: all 0.3s ease;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Estilos del encabezado */
+.header-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-image: url('../assets/imagen/encabezado.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: var(--shadow-default);
+    min-height: 80px;
+}
+
+.logo {
+    position: relative;
+    z-index: 2;
+}
+
+.logo img {
+    max-width: 80px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    position: relative;
+    color: var(--color-text);
+    font-size: 1.5em;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.login-button {
+    position: relative;
+    z-index: 2;
+}
+
+.login-button button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.login-button button:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+.login-button button:active {
+    transform: translateY(0);
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        padding: var(--spacing-md);
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    .logo img {
+        max-width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: var(--spacing-sm);
+    }
+
+    h1 {
+        font-size: 1em;
+    }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text: #ecf0f1;
+    }
+
+    .header-container {
+        background-blend-mode: darken;
+    }
+}
+
+/* Estilos del Footer */
+footer {
+    background-color: #1a237e; /* Azul rey */
+    color: white;
+    padding: var(--spacing-md) 0;
+    margin-top: var(--spacing-md);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md) * 2;
+    padding: var(--spacing-md);
+}
+
+.footer-section h3 {
+    color: #64b5f6; /* Azul claro para títulos */
+    margin-bottom: var(--spacing-md);
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section.contacto address {
+    font-style: normal;
+    line-height: 2;
+}
+
+.footer-section.contacto i {
+    margin-right: var(--spacing-sm);
+    color: #64b5f6;
+}
+
+.footer-section.enlaces ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section.enlaces a {
+    color: white;
+    text-decoration: none;
+    line-height: 2.2;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.footer-section.enlaces a:hover {
+    color: #64b5f6;
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: flex-start;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.8em;
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+.social-links .fa-facebook:hover {
+    color: #1877f2;
+}
+
+.social-links .fa-twitter:hover {
+    color: #1da1f2;
+}
+
+.social-links .fa-instagram:hover {
+    color: #e4405f;
+}
+
+.social-links .fa-tiktok:hover {
+    color: #00f2ea;
+}
+
+.footer-bottom {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    margin: var(--spacing-sm) 0;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Media queries para el footer */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-section.contacto i {
+        width: 20px;
+        text-align: center;
+    }
+
+    .footer-section.enlaces a:hover {
+        padding-left: 0;
+    }
+}
+
+/* Estilos del héroe */
+.section-hero {
+    background-image: linear-gradient(rgba(26, 35, 126, 0.8), rgba(26, 35, 126, 0.8)),
+                      url('../assets/images/santo-domingo.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--border-radius);
+    padding: 80px 40px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: var(--color-text-light);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.section-subtitle {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Grid mejorado */
+.historia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+/* Tarjetas mejoradas */
+.historia-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-default);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.historia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-inner {
+    padding: 30px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(26, 35, 126, 0.1);
+}
+
+.card-icon {
+    color: var(--color-primary);
+    font-size: 2em;
+    margin-right: 15px;
+}
+
+.card-header h3 {
+    color: var(--color-primary);
+    font-size: 1.4em;
+    margin: 0;
+}
+
+.historia-card p {
+    color: var(--color-text);
+    line-height: 1.8;
+    font-size: 1.1em;
+    text-align: justify;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.historia-card {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.historia-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.historia-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .section-hero {
+        padding: 60px 20px;
+    }
+
+    .section-title {
+        font-size: 2.5em;
+    }
+
+    .card-header h3 {
+        font-size: 1.2em;
+    }
+
+    .historia-card p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-hero {
+        padding: 40px 20px;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-icon {
+        margin: 0 0 10px 0;
+    }
+}
+
+.nav-menu ul li .btn-login {
+    background-color: #3498db;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu ul li .btn-login:hover {
+    background-color: #2980b9;
+}
+
+/* Asegurarse que el modal esté por encima del header */
+.header {
+    position: relative;
+    z-index: 100;
+}
+
+.modal {
+    z-index: 1000;
+}
+
+/* Estilos para el header interno */
+.header-interno {
+    background-color: #1a237e;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+.header-interno .banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.header-interno .logo-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-interno .logo-title img {
+    height: 60px;
+    width: auto;
+}
+
+.header-interno .logo-title h1 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.header-interno .user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #ffffff;
+}
+
+.btn-logout {
+    background-color: #dc3545;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .header-interno .banner-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .header-interno .user-info {
+        flex-direction: column;
+    }
+}
+
+.header-banner {
+    background-color: #007bff;  /* Fondo azul */
+    padding: 0.5rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.banner-content img {
+    height: 80px;  /* Logo más grande */
+}
+
+.banner-content h1 {
+    font-size: 1.8rem;  /* Texto más grande */
+    margin: 0;
+    white-space: nowrap;
+    color: white;  /* Texto en blanco */
+    text-transform: uppercase;  /* Texto en mayúsculas */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;  /* Enlaces en blanco */
+    font-weight: 500;
+    font-size: 1.2rem;  /* Texto más grande */
+    text-transform: uppercase;  /* Texto en mayúsculas */
+}
+
+.nav-link:hover {
+    color: #f0f0f0;  /* Color hover más claro */
+    text-decoration: underline;
+}
+
+.user-welcome {
+    margin-left: auto;
+    white-space: nowrap;
+    color: white;  /* Texto en blanco */
+    font-size: 1.2rem;  /* Texto más grande */
+}
+
+.btn-login, .btn-logout {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid white;  /* Borde blanco */
+    border-radius: 4px;
+    background-color: transparent;  /* Fondo transparente */
+    color: white;  /* Texto en blanco */
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 1.2rem;  /* Texto más grande */
+    text-transform: uppercase;  /* Texto en mayúsculas */
+}
+
+.btn-login:hover, .btn-logout:hover {
+    background-color: white;
+    color: #007bff;  /* Color del texto al hacer hover */
+} 
