@@ -39,7 +39,7 @@
     </div>
     
     <div class="footer-bottom">
-        <p>&copy; 2024 CESFAM Santo Domingo. Todos los derechos reservados.</p>
+        <p>&copy; 2026 CESFAM Santo Domingo. Todos los derechos reservados.</p>
         <p>Desarrollado por Fernando Pontigo</p>
     </div>
 </footer> 
